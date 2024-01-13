@@ -32,7 +32,17 @@
       "id": "6297",
       "title": "laravel",
       "body": "laravel",
-      "tags": ["laravel"]
+      "tags": [
+        "laravel"
+      ]
+    },
+    {
+      "id": "3300",
+      "title": "python",
+      "body": "python",
+      "tags": [
+        "python"
+      ]
     }
   ]
 }
