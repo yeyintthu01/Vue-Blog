@@ -3,8 +3,13 @@
       <div v-if="error">
           {{error}}
       </div>
-      <div v-if="posts.length>0 && posts">
-          <PostsList :posts="posts"></PostsList>
+      <div v-if="posts.length>0 && posts" class="layout">
+          <div>
+            <PostsList :posts="posts"></PostsList>
+          </div>
+          <div>
+            <TagCloud></TagCloud>
+          </div>
       </div>
       <div v-else>
         <Spinner></Spinner>
@@ -13,6 +18,7 @@
 </template>
 
 <script>
+import TagCloud from '../components/TagCloud'
 import Spinner from '../components/Spinner'
 import { ref } from 'vue';
 
@@ -21,6 +27,7 @@ import PostsList from '../components/PostsList'
 import getPosts from '../composables/getPosts'
 export default {
   components: {
+    TagCloud,
     Spinner,
     PostsList,
     },
@@ -36,5 +43,10 @@ export default {
       max-width: 1200px;
       margin: 0 auto;
       padding: 10px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
     }
 </style>

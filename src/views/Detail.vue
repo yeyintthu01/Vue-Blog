@@ -1,11 +1,13 @@
 <template>
-  <div v-if="post" class="post">
+    <div class="detail">
+      <div v-if="post" class="post">
         <h2>{{post.title}}</h2>
         <p>{{post.body}}</p>
-  </div>
-  <div v-else>
-    <Spinner></Spinner>
-  </div>
+      </div>
+      <div v-else>
+        <Spinner></Spinner>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -26,6 +28,10 @@ export default {
 </script>
 
 <style>
+    .detail{
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     .post {
         margin: 0 40px 30px;
         padding-bottom: 30px;
