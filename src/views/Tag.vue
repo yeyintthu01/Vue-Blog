@@ -10,18 +10,20 @@
             </div>
         </div>
         <div v-else>
-            loading...
+            <Spinner></Spinner>
         </div>
     </div>
 </template>
 
 <script>
+import Spinner from '../components/Spinner'
 import TagCloud from '../components/TagCloud'
 import PostsList from '../components/PostsList'
 import { computed } from 'vue'
 import getPosts from '../composables/getPosts'
 export default {
   components: {
+    Spinner,
     TagCloud,
     PostsList },
     props:['tag'],
