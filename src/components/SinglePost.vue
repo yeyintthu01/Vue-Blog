@@ -1,9 +1,9 @@
 <template>
-    <div class="post">
+    <div class="post" v-if="post">
         <router-link :to="{name:'Detail',params:{id:post.id}}">
             <h2>{{post.title}}</h2>
         </router-link>
-        <p>{{post.body}}</p>
+        <p>{{cutPostBody}}</p>
         <div v-for="tag in post.tags" :key="tag" class="pill">
             <router-link :to="{name:'Tag',params:{tag}}">{{tag}}</router-link>
         </div>
@@ -11,8 +11,15 @@
 </template>
 
 <script>
+import { computed } from 'vue'
 export default {
-    props:["post"]
+    props:["post"],
+    setup(props){
+      let cutPostBody=computed(()=>{
+        return props.post.body.substring(0,100)+"...."
+      })
+      return {cutPostBody}
+    }
 }
 </script>
 
