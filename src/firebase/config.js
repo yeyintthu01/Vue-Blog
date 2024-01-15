@@ -12,8 +12,9 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig)
 
   let db=firebase.firestore();
+  let timestamp=firebase.firestore.FieldValue.serverTimestamp
 
-  export {db};
+  export {db,timestamp};
 // import { initializeApp } from 'firebase/app';
 // import { getFirestore } from 'firebase/firestore';
 
